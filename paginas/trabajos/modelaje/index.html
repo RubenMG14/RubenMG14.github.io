@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ruben Montes - Artista</title>
+    <link rel="icon" href="../../../imagenes/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../../../css/normalize.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/style.css">
+</head>
+
+<body>
+    <div id="inicio2">
+        <h1 id="titulo2">RUBEN MONTES</h1>
+    </div>
+    <div id="t_superior2">
+        <ul id="enlaces">
+            <li><a href="../../../index.html">INICIO</a></li>
+            <span>/</span>
+            <li id="li_select"><a href="../index.html">TRABAJOS</a></li>
+            <span>/</span>
+            <li><a href="../../quienSoy/index.html">SOBRE MI</a></li>
+            <span>/</span>
+            <li><a href="../../contacto/index.html">CONTACTO</a></li>
+        </ul>
+    </div>
+    <h2 class="textoTrabajo">MODELOS 3D</h2>
+    <div class="slider">
+        <div class="opcionesSlider fade">
+            <video autoplay loop>
+                <source src="../../../videos/arma.mp4" type="video/mp4">
+            </video>
+            <div class="text">### Rifle de asalto ACR ###</div>
+        </div>
+        <div class="opcionesSlider fade">
+            <video autoplay loop>
+                <source src="../../../videos/cubo.mp4" type="video/mp4">
+            </video>
+            <div class="text">### Cubo ###</div>
+        </div>
+        <div class="opcionesSlider fade">
+            <video autoplay loop>
+                <source src="../../../videos/buzon.mp4" type="video/mp4">
+            </video>
+            <div class="text">### Buzón ###</div>
+        </div>
+        <div class="opcionesSlider fade">
+            <video autoplay loop>
+                <source src="../../../videos/bici.mp4" type="video/mp4">
+            </video>
+            <div class="text">### Bicicleta ###</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        var videos = document.getElementsByTagName("video");
+        showSlides(slideIndex);
+
+        function parar() {
+            for (i = 0; i < videos.length; i++) {
+                videos[i].load();
+            }
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+            parar();
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("opcionesSlider");
+            var dots = document.getElementsByClassName("redondasSlider");
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+    </script>
+    <div id="footer">
+        <p>· Ruben Montes - 608 642 718 - ruben.montes.gomez@gmail.com ·</p>
+    </div>
+</body>
+</html>
